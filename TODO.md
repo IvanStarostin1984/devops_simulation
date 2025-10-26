@@ -50,7 +50,7 @@
 > All tracks below execute in parallel and target distinct documentation files
 > under `docs/legacy-simulator/` to avoid cross-file contention.
 
-- [ ] **Track: Orchestrator flow and helper contracts**
+- [x] **Track: Orchestrator flow and helper contracts** ([Outcome](NOTES.md#2025-11-05--pr-draft))
   - Inspect `DevOpsSimulation.__init__`, `run_simulation`,
     `run_backcompat_iterations`, `run_phase_based_simulation`, and
     `run_phase_single_pass` inside `legacy/openai19pm10.py` to outline macro vs.
@@ -61,6 +61,8 @@
     state into each pass.
   - Draft `docs/legacy-simulator/flow.md` synthesising the lifecycle narrative
     and citing where CSV writers and DOCX generation hooks fire.
+  - [x] Document orchestrator flow narrative (see
+    [NOTES.md#2025-11-04--pr-draft](NOTES.md#2025-11-04--pr-draft)).
 - [ ] **Track: Artifact template structures**
   - Review how `DevOpsSimulation` consumes `artifact_data.json` keys such as
     `tables`, `dependencies_map`, `artifact_key_map`,
