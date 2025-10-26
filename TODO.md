@@ -1,3 +1,10 @@
+# TODO
+
+- [ ] Document simulation overview (see NOTES.md entry dated 2025-02-14).
+  - Draft docs/simulation-overview.md covering modes, workflows, data IO, metrics.
+  - Describe reporting limitations and planned remediation.
+  - Cross-link overview from README and future developer guides section.
+
 # Documentation backlog — aligned with NOTES.md plan
 
 1. **README overhaul** — restructure the introduction, add a quickstart and
@@ -9,4 +16,3 @@
 4. **Follow-up documentation tasks** — track subsequent updates (architecture
    notes, contribution guidelines, changelog entries) resulting from the above
    work. ([Plan](NOTES.md#2025-10-26--pr-draft))
-
