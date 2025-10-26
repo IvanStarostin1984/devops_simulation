@@ -55,3 +55,26 @@ Keep lines ≤ 80 chars and leave exactly **one blank line** between secti
   guidance that obscured how the simulation behaves and how to work in the repo.
 - **Next step**: Monitor documentation for additional gaps as the refactor plan
   evolves.
+
+## 2025-10-28  PR #draft
+
+- **Summary**: Planned a documentation pass to explain the legacy simulator's
+  control flow, data inputs, and outputs before refactoring.
+- **Stage**: planning
+- **Motivation / Decision**: A structured understanding of
+  `legacy/openai19pm10.py` and its supporting assets is required to document
+  current behaviour accurately and derisk later modernization.
+- **Next step**: Execute the parallel TODO.md tasks that capture flow,
+  configuration, input, and output documentation tracks.
+
+## 2025-10-29  PR #draft
+
+- **Summary**: Deepened the documentation plan by mapping simulator lifecycle
+  hooks to their concrete classes, data files, and generated artifacts.
+- **Stage**: planning
+- **Motivation / Decision**: Reviewing `DevOpsSimulation`, `IssueTracker`, and
+  related assets exposed specific control points that future docs must cover to
+  keep refactors aligned with the legacy behaviour.
+- **Next step**: Update TODO.md with parallel documentation tracks keyed to the
+  identified files (`flow.md`, `templates.md`, `configuration.md`,
+  `artifacts.md`, `runtime-log.md`).
