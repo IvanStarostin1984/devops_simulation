@@ -97,3 +97,16 @@ Keep lines ≤ 80 chars and leave exactly **one blank line** between secti
 - **Motivation / Decision**: Need to audit the freshly added baseline doc for factual accuracy and fill observable gaps so future refactors rely on a trustworthy reference.
 - **Next step**: Update TODO.md with the verification task, review the code paths, and adjust the baseline documentation accordingly.
 
+
+## 2025-11-01  PR #draft
+
+- **Summary**: Plan documentation update to capture the current simulator
+  inputs, flow, and artifacts before any refactor.
+- **Stage**: planning
+- **Motivation / Decision**: Contributors need a single reference that mirrors
+  the legacy implementation so future refactors can compare behavior safely.
+- **Next step**: Update `docs/simulation-overview.md` (and linked references) to
+  describe the as-is control flow, data hand-offs, and reporting outputs;
+  acceptance criteria: overview reflects actual legacy behavior, cites key
+  runtime files, and calls out preserved limitations.
+

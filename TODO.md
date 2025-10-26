@@ -2,10 +2,17 @@
 - [x] Documented legacy artifacts inventory (NOTES 2025-02-14 PR #draft) and linked from main README.
 # TODO
 
-- [ ] Document simulation overview (see NOTES.md entry dated 2025-02-14).
-  - Draft docs/simulation-overview.md covering modes, workflows, data IO, metrics.
+- [ ] Document simulation overview (see NOTES.md entries dated 2025-02-14 and
+      2025-11-01).
+  - Draft `docs/simulation-overview.md` covering modes, workflows, data IO,
+    metrics, and explicit references to the legacy runtime files they stem
+    from.
   - Describe reporting limitations and planned remediation.
-  - Cross-link overview from README and future developer guides section.
+  - Cross-link the overview from `README.md` and future developer guides
+    section.
+  - Acceptance criteria: overview reflects observed legacy behavior, enumerates
+    required inputs/outputs, and preserves current limitations for refactor
+    parity.
 - [x] Verify legacy behavior baseline doc accuracy ([Plan](NOTES.md#2025-10-31--pr-draft)).
 - [x] Fill any gaps found in legacy/documentation/behavior-baseline.md so it captures
       actual control flow, IO contracts, and guardrails before refactoring (NOTES 2025-10-31 PR #draft).
