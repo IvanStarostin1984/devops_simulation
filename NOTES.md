@@ -132,3 +132,35 @@ Keep lines ≤ 80 chars and leave exactly **one blank line** between secti
 - **Motivation / Decision**: Review feedback highlighted mismatches between the documented artifact names and the code paths that emit them, risking confusion during verification runs.
 - **Next step**: Update `docs/simulation-overview.md` to match the code defaults (e.g., `iteration_metrics.csv`, `mini_iteration_summary_metrics.csv`, `iteration_summary_metrics.csv`, `output_multi_iter.docx`, `colab_console_output.txt`) and describe overwrite vs. append behavior.
 
+## 2025-11-04  PR #draft
+
+- **Outcome / Acceptance Criteria**: Publish `docs/legacy-simulator/flow.md` capturing the as-is orchestrator, iteration, and state-propagation behavior from `legacy/openai19pm10.py`; readers can trace macro/mini iteration transitions, helper responsibilities, and state hand-offs without reading the code.
+- **Summary**: Plan detailed documentation of the legacy simulation flow so refactors have a baseline reference.
+- **Stage**: planning
+- **Motivation / Decision**: Before refactoring, we need a narrative and structural summary of how the orchestrator coordinates iterations, artifacts, metrics, and state persistence to guard against regressions.
+- **Next step**: Draft the flow document, link to relevant helpers, and ensure terminology aligns with existing overview docs.
+- **Summary**: Documented `docs/legacy-simulator/flow.md` with the current
+  orchestration, state propagation, and artifact emission steps from
+  `legacy/openai19pm10.py`.
+- **Stage**: implementation
+- **Motivation / Decision**: Provide a narrative reference of the pre-refactor
+  behavior so future changes can validate parity without re-reading the
+  notebook.
+- **Next step**: Monitor for gaps when drafting the remaining legacy simulator
+  documentation tracks.
+
+## 2025-11-05  PR #draft
+
+- **Outcome / Acceptance Criteria**: Confirm `docs/legacy-simulator/flow.md`
+  cites the authoritative helper ranges, matches observable behavior in
+  `legacy/openai19pm10.py`, and is cross-referenced from TODO.md so the flow
+  track can close.
+- **Summary**: Plan a verification pass on the flow reference and align TODO.md
+  status with the completed documentation.
+- **Stage**: planning
+- **Motivation / Decision**: A short validation cycle ensures the new flow doc
+  remains trustworthy and the work queue reflects reality before continuing
+  with parallel documentation tracks.
+- **Next step**: Adjust TODO.md to mark the flow track complete and make any
+  documentation touch-ups discovered during the verification review.
+
