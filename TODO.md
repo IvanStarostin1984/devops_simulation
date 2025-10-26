@@ -2,8 +2,8 @@
 - [x] Documented legacy artifacts inventory (NOTES 2025-02-14 PR #draft) and linked from main README.
 # TODO
 
-- [ ] Document simulation overview (see NOTES.md entries dated 2025-02-14 and
-      2025-11-01).
+- [x] Document simulation overview (see NOTES.md entries dated 2025-02-14,
+      2025-11-01, and 2025-11-02).
   - Draft `docs/simulation-overview.md` covering modes, workflows, data IO,
     metrics, and explicit references to the legacy runtime files they stem
     from.
@@ -13,6 +13,9 @@
   - Acceptance criteria: overview reflects observed legacy behavior, enumerates
     required inputs/outputs, and preserves current limitations for refactor
     parity.
+  - Completed per `NOTES.md#2025-11-02--pr-draft`: overview now cites
+    `run_backcompat_iterations`, `run_phase_based_simulation`, and state
+    propagation helpers alongside artifact emission points.
 - [x] Verify legacy behavior baseline doc accuracy ([Plan](NOTES.md#2025-10-31--pr-draft)).
 - [x] Fill any gaps found in legacy/documentation/behavior-baseline.md so it captures
       actual control flow, IO contracts, and guardrails before refactoring (NOTES 2025-10-31 PR #draft).
@@ -20,6 +23,15 @@
   and published `legacy/documentation/behavior-baseline.md`.
 - [x] Refresh README.md and docs/simulation-overview.md per NOTES.md entry dated
   2025-10-27 to remove typos, clarify guardrails, and highlight next steps.
+- [x] Realign simulation overview artifact references ([Plan](NOTES.md#2025-11-03--pr-draft)).
+  - Confirm the document lists `iteration_metrics.csv`,
+    `mini_iteration_summary_metrics.csv`,
+    `iteration_summary_metrics.csv`, `output_multi_iter.docx`,
+    `teacher_review_output_multi_iter.docx`, and `colab_console_output.txt`.
+  - Describe which outputs are overwritten on each run versus appended when
+    existing files are present.
+  - Acceptance criteria: documentation references match the filenames and
+    behaviors in `setup_documentation()` and `generate_final_summary_doc()`.
 
 # Documentation backlog — aligned with NOTES.md plan
 
