@@ -81,15 +81,20 @@
     macro/mini counts) and how they steer orchestrator branching.
   - Create `docs/legacy-simulator/configuration.md` summarising every knob and
     linking them to the decision logic they influence.
-- [ ] **Track: Runtime inputs and generated outputs**
-  - Trace how `setup_documentation` and related writers emit
+- [x] **Track: Runtime inputs and generated outputs** ([Plan](NOTES.md#2025-11-06--pr-draft))
+  - Documented current inputs, append/overwrite behavior, and download list in docs/legacy-simulator/artifacts.md.
+  - Captured how `setup_documentation` and downstream writers emit
     `iteration_metrics.csv`, `mini_iteration_summary_metrics.csv`,
-    `iteration_summary_metrics.csv`, and the DOCX reports under timestamped
-    filenames.
-  - Include coverage of seeded assets (`client_specifications.docx`, existing
-    CSV history) and how the simulator appends vs. rewrites data.
-  - Compile the findings into `docs/legacy-simulator/artifacts.md`, including
-    downstream analysis hints for each artifact.
+    `iteration_summary_metrics.csv`, and the DOCX reports without introducing
+    timestamped filenames.
+  - Noted the seeded assets (`CLIENT_SPEC` fallback, existing CSV history) and
+    whether each file is overwritten or appended on subsequent runs.
+  - Summarised analysis hints for every artifact so refactors preserve the
+    current bundle.
+- [x] **Track: Artifact lifecycle polish** ([Plan](NOTES.md#2025-11-07--pr-draft))
+  - Added a lifecycle matrix summarising producers, append/overwrite modes, and seeded defaults in docs/legacy-simulator/artifacts.md.
+  - Clarified configuration fallbacks when `simulation_config.json` is absent and how the notebook reuses `builtins.CLIENT_SPEC`.
+  - Documented logging guarantees and truncation behaviour for `colab_console_output.txt` to preserve observable transcripts.
 - [ ] **Track: Runtime logging and environment bootstrap**
   - Document the `DualLogger` stdout hijack, notebook `print` mirroring, and the
     Colab-specific bootstrap commands (`!pip install …`, `ensure_nltk_resources`
