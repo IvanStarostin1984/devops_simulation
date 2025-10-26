@@ -25,3 +25,9 @@ Keep lines ≤ 80 chars and leave exactly **one blank line** between secti
 - **Motivation / Decision**: establish collaboration conventions before code.
 - **Next step**: set up lint/test commands and begin core feature A.
 
+
+## 2025-02-14  PR #draft
+- **Summary**: Documented legacy artifact inventory and referenced it from the main README.
+- **Stage**: implementation
+- **Motivation / Decision**: Contributors need a canonical list of immutable legacy assets and clear handling rules.
+- **Next step**: None; legacy documentation now centralizes asset guidance.

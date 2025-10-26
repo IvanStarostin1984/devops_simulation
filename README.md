@@ -2,7 +2,7 @@
 simulation of two modes of devops
 Must run with any client specifications from any domain/domains
 
-Legacy folder and it's contents are read only, except contents of subfolder legacy/documentation and contents of README.md files in folder legacy and all it's subfolders. It is source code that must be refactored into clear modular code with the same behavior (+ some improvements, but at least the same behavior) and will be executed in Visual Studio 2022.
+Legacy folder and it's contents are read only, except contents of subfolder legacy/documentation and contents of README.md files in folder legacy and all it's subfolders. It is source code that must be refactored into clear modular code with the same behavior (+ some improvements, but at least the same behavior) and will be executed in Visual Studio 2022. Refer to `legacy/documentation/assets.md` for a full inventory of legacy inputs, outputs, and dependencies that must remain immutable outside the documented exceptions.
 Aim of this code is multiple runs in standard DEVOPS mode (backword compatibility = true) and enhanced devops (backword compatibility = false), produce metrics, which will be later used to compare standard devops and enhanced devops. Both modes act on 2 json files.
 Explanation/context:
 Generally, standard devops is process of generation of software engineering documentation, when macroiterations may be from one to many, miniiterations always = 1, issues are being detected after each artifact/table is being generated, but are being fed into creator prompt only on next macroiteration. Lessons are learned only in the end of macroiteration, and shown to corresponding artifacts creator prompt only in next macroiteration.
