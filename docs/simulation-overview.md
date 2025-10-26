@@ -4,7 +4,28 @@ This document summarizes how the simulation models standard and enhanced DevOps
 processes, how work iterates through macroiterations and miniiterations, the
 key data artifacts exchanged, and the metrics we expect to evaluate. Treat it
 as the single source of truth for terminology and flow until the refactoring
-effort introduces new adapters or interfaces.
+effort introduces new adapters or interfaces. The observations below mirror the
+current implementation in `legacy/openai19pm10.py`, specifically the
+`DevOpsSimulation` class and its orchestrator helpers, so any future refactor
+must preserve the described behavior (or explicitly document deviations).
+
+## Implementation reference points
+
+Key orchestration logic lives inside `legacy/openai19pm10.py`:
+
+- `DevOpsSimulation.run_simulation()` — entry point that dispatches to the
+  standard (`run_backcompat_iterations`) or enhanced
+  (`run_phase_based_simulation`) drivers based on `simulation_config.json`.
+- `run_phase_single_pass()` — executes a single phase/miniiteration pair,
+  updating artifacts, the `IssueTracker`, and phase counters.
+- `finalize_mini_iteration()` and `compute_iteration_metrics()` — emit
+  `mini_iteration_summary_metrics.csv` and `iteration_summary_metrics.csv`
+  respectively.
+- `setup_documentation()` — prepares the CSV/DOCX outputs and ensures headers
+  exist before iteration work begins.
+- `DualLogger` bootstrap — mirrors notebook stdout into
+  `colab_console_output - *.txt` so console history accompanies generated
+  artifacts.
 
 ## Modes of Operation
 
@@ -56,30 +77,38 @@ learned so that subsequent passes can react to new information quickly.
 
 ## Data Inputs
 
-- Two JSON files provide the primary inputs:
-  - **Client specification data** that seeds requirements, constraints, and
-    context for artifacts. The legacy scripts expect a structured requirements
-    document with client metadata, desired outputs, and validation hooks.
-  - **Mode configuration data** that determines whether the simulation runs in
-    standard or enhanced mode and captures iteration parameters (counts,
-    thresholds, toggles). The file also toggles backward compatibility mode and
-    any experimental flags.
+- `legacy/artifact_data.json` provides prompt templates, table schemas,
+  dependency ordering, and trace column mappings consumed by
+  `run_phase_single_pass()` and downstream helpers.
+- `legacy/simulation_config.json` toggles backward compatibility mode and sets
+  macro/mini iteration counts. Although the code synthesizes default phases when
+  none are supplied, helpers such as `get_lessons_for_new_mini()` still expect a
+  `phases` array; provide explicit phase definitions to avoid lookup errors.
+- `legacy/client_specifications.docx` is copied into the student deliverable via
+  `_write_client_spec_once()` the first time a run executes.
 - Additional runtime inputs include detected issues and lessons learned, which
-  are persisted between iterations and fed back into the workflow per the rules
-  above. The existing implementation serializes these as JSON fragments between
-  runs so state can be replayed during analysis.
+  are persisted between iterations via `self.feedback_storage` and
+  `self.partial_lessons`. The implementation serializes these as JSON fragments
+  so state can be replayed during analysis.
 
 ## Data Outputs
 
-- Generated documentation artifacts and structured tables per iteration. These
-  provide the main evidence for how requirements evolved across cycles.
-- Issue logs that capture defects detected during each generation pass, grouped
-  by macroiteration and miniiteration identifiers.
-- Lessons learned summaries keyed by macroiteration and miniiteration so teams
-  can audit when insights became available.
-- Metric payloads (see below) emitted for downstream analysis and reporting. In
-  the current state they are optimized for aggregate trend analysis rather than
-  final-iteration comparisons.
+- `output_multi_iter - <timestamp>.docx` and
+  `teacher_review_output_multi_iter - <timestamp>.docx` collect headings,
+  lessons learned, and artifacts for the student and teacher audiences.
+- `iteration_metrics - <timestamp>.csv` is recreated on each run with
+  macro-level iteration metrics. `iteration_summary_metrics - <timestamp>.csv`
+  appends
+  per-macroiteration summary rows, while `mini_iteration_summary_metrics -
+  <timestamp>.csv` captures every miniiteration finalized by
+  `finalize_mini_iteration()`.
+- `issue_lifecycle - <timestamp>.csv` records discovery and resolution timing
+  based on the `IssueTracker` state machine.
+- `colab_console_output - <timestamp>.txt` mirrors stdout for traceability.
+
+Metric payloads (see below) remain optimized for aggregate trend analysis rather
+than final-iteration comparisons, so enhanced-mode runs appear to generate more
+activity because they include multiple miniiterations per macroiteration.
 
 ## Simulation Lifecycle Checklist
 
@@ -135,6 +164,23 @@ mind:
   metrics versus final-iteration metrics should be used.
 - Add tooling to extract and inspect single miniiterations so teams can debug
   discrepancies without replaying entire macroiterations.
+
+## Operational checklist
+
+Use this quick-reference list when running the legacy notebook (Colab or local):
+
+1. Install dependencies (`python-docx`, `openai>=1.77`, `nltk`) as shown at the
+   top of `legacy/openai19pm10.py` and ensure NLTK resources are downloaded.
+2. Stage the three primary inputs (`client_specifications.docx`,
+   `artifact_data.json`, and `simulation_config.json`) alongside the notebook.
+3. Invoke `orchestrate_process()` (wrapper around `DevOpsSimulation`), then
+   confirm DOCX, CSV, and console files appear with fresh timestamps in
+   `legacy/`.
+4. Review `mini_iteration_summary_metrics` between `iteration_summary_metrics`
+   rows to verify enhanced mode emitted multiple miniiterations when
+   configured.
+5. Archive the generated artifacts and console transcript to maintain a replay
+   trail for regression analysis.
 
 ## Related Documentation
 
