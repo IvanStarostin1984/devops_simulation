@@ -1,5 +1,6 @@
 # devops_simulation
 simulation of two modes of devops
+Must run with any client specifications from any domain/domains
 
 Legacy folder and it's contents are read only, except contents of subfolder legacy/documentation and contents of README.md files in folder legacy and all it's subfolders. It is source code that must be refactored into clear modular code with the same behavior (+ some improvements, but at least the same behavior) and will be executed in Visual Studio 2022.
 Aim of this code is multiple runs in standard DEVOPS mode (backword compatibility = true) and enhanced devops (backword compatibility = false), produce metrics, which will be later used to compare standard devops and enhanced devops. Both modes act on 2 json files.
