@@ -2,7 +2,9 @@
 
 This document summarizes how the simulation models standard and enhanced DevOps
 processes, how work iterates through macroiterations and miniiterations, the
-key data artifacts exchanged, and the metrics we expect to evaluate.
+key data artifacts exchanged, and the metrics we expect to evaluate. Treat it
+as the single source of truth for terminology and flow until the refactoring
+effort introduces new adapters or interfaces.
 
 ## Modes of Operation
 
@@ -30,6 +32,10 @@ key data artifacts exchanged, and the metrics we expect to evaluate.
 
 ## Iteration Workflow
 
+The simulation advances through repeating macroiterations that contain one or
+more miniiterations. Each iteration pulls forward the latest issues and lessons
+learned so that subsequent passes can react to new information quickly.
+
 ### Macroiterations
 
 - Represent the major planning and delivery cycles for both modes.
@@ -52,20 +58,43 @@ key data artifacts exchanged, and the metrics we expect to evaluate.
 
 - Two JSON files provide the primary inputs:
   - **Client specification data** that seeds requirements, constraints, and
-    context for artifacts.
+    context for artifacts. The legacy scripts expect a structured requirements
+    document with client metadata, desired outputs, and validation hooks.
   - **Mode configuration data** that determines whether the simulation runs in
     standard or enhanced mode and captures iteration parameters (counts,
-    thresholds, toggles).
+    thresholds, toggles). The file also toggles backward compatibility mode and
+    any experimental flags.
 - Additional runtime inputs include detected issues and lessons learned, which
   are persisted between iterations and fed back into the workflow per the rules
-  above.
+  above. The existing implementation serializes these as JSON fragments between
+  runs so state can be replayed during analysis.
 
 ## Data Outputs
 
-- Generated documentation artifacts and structured tables per iteration.
-- Issue logs that capture defects detected during each generation pass.
-- Lessons learned summaries keyed by macroiteration and miniiteration.
-- Metric payloads (see below) emitted for downstream analysis and reporting.
+- Generated documentation artifacts and structured tables per iteration. These
+  provide the main evidence for how requirements evolved across cycles.
+- Issue logs that capture defects detected during each generation pass, grouped
+  by macroiteration and miniiteration identifiers.
+- Lessons learned summaries keyed by macroiteration and miniiteration so teams
+  can audit when insights became available.
+- Metric payloads (see below) emitted for downstream analysis and reporting. In
+  the current state they are optimized for aggregate trend analysis rather than
+  final-iteration comparisons.
+
+## Simulation Lifecycle Checklist
+
+When executing the legacy simulation, keep the following order of operations in
+mind:
+
+1. Load the client specification and configuration JSON files.
+2. Initialize iteration counters and seed the backlog of existing issues and
+   lessons learned (empty on a fresh run).
+3. Execute each macroiteration, generating artifacts and collecting issues for
+   every miniiteration within it.
+4. Persist the generated artifacts, issue logs, lessons learned, and metric
+   payloads for reporting.
+5. Feed the accumulated issues and lessons into the next iteration cycle until
+   the configured stopping conditions are met.
 
 ## Intended Metrics
 
@@ -90,6 +119,8 @@ key data artifacts exchanged, and the metrics we expect to evaluate.
   misleading.
 - Metrics do not yet normalize for the varying number of miniiterations, nor do
   they highlight the quality of the *final* iteration outputs specifically.
+- State persistence is optimized for replaying complete macroiterations, which
+  makes it cumbersome to isolate a single miniiteration when debugging.
 
 ### Planned Fixes
 
@@ -102,6 +133,8 @@ key data artifacts exchanged, and the metrics we expect to evaluate.
   can trace feedback latency explicitly.
 - Extend documentation and dashboards to clarify when aggregate macro-level
   metrics versus final-iteration metrics should be used.
+- Add tooling to extract and inspect single miniiterations so teams can debug
+  discrepancies without replaying entire macroiterations.
 
 ## Related Documentation
 

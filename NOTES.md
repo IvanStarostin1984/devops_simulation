@@ -45,3 +45,13 @@ Keep lines ≤ 80 chars and leave exactly **one blank line** between secti
   ensure TODO items trace back to NOTES plans per repository conventions.
 - **Next step**: Execute backlog items in TODO.md, starting with README
   overhaul when capacity allows.
+
+## 2025-10-27  PR #draft
+
+- **Summary**: Refined README and simulation overview to fix typos, remove
+  duplicated phrasing, and clarify guardrails for contributors.
+- **Stage**: implementation
+- **Motivation / Decision**: Earlier docs contained inconsistencies and missing
+  guidance that obscured how the simulation behaves and how to work in the repo.
+- **Next step**: Monitor documentation for additional gaps as the refactor plan
+  evolves.
