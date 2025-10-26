@@ -182,3 +182,21 @@ Keep lines ≤ 80 chars and leave exactly **one blank line** between secti
 - **Stage**: implementation
 - **Motivation / Decision**: Ensuring the artifact reference spells out overwrite vs. append behavior and seeded defaults prevents accidental contract changes during refactoring.
 - **Next step**: Monitor for additional review feedback while advancing the remaining legacy simulator documentation tracks in parallel.
+
+## 2025-11-08  PR #draft
+
+- **Outcome / Acceptance Criteria**: Document every configuration input that
+  steers macro/mini iteration behavior, phase sequencing, and backward
+  compatibility toggles so refactors can reproduce the legacy branching logic
+  without inspecting code; include default fallbacks and failure modes observed
+  in `legacy/openai19pm10.py`.
+- **Summary**: Plan documentation capturing the simulator configuration surfaces
+  that govern as-is iteration behavior prior to the refactor.
+- **Stage**: planning
+- **Motivation / Decision**: Contributors need a single reference describing how
+  `simulation_config.json` and related helpers influence runtime behavior so they
+  can validate parity when modernizing the orchestrator.
+- **Next step**: Update TODO.md with the configuration documentation work item
+  and draft `docs/legacy-simulator/configuration.md` to satisfy the acceptance
+  criteria.
+

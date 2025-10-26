@@ -73,7 +73,7 @@
     phase execution.
   - Author `docs/legacy-simulator/templates.md` describing the schema fields,
     prompt text, and downstream consumers.
-- [ ] **Track: Simulation configuration surfaces**
+- [ ] **Track: Simulation configuration surfaces** ([Plan](NOTES.md#2025-11-08--pr-draft))
   - Audit `simulation_config.json` alongside `DevOpsSimulation.__init__` to
     explain controls for `macroIterations`, `phases`, `_phase_final_mini`, and
     toggles like `backwardCompatibilityMode`.
