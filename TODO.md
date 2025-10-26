@@ -6,6 +6,8 @@
   - Draft docs/simulation-overview.md covering modes, workflows, data IO, metrics.
   - Describe reporting limitations and planned remediation.
   - Cross-link overview from README and future developer guides section.
+- [x] Refresh README.md and docs/simulation-overview.md per NOTES.md entry dated
+  2025-10-27 to remove typos, clarify guardrails, and highlight next steps.
 
 # Documentation backlog — aligned with NOTES.md plan
 
