@@ -1,3 +1,5 @@
+...
+- [x] Documented legacy artifacts inventory (NOTES 2025-02-14 PR #draft) and linked from main README.
 # TODO
 
 - [ ] Document simulation overview (see NOTES.md entry dated 2025-02-14).
