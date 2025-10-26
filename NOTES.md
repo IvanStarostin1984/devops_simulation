@@ -273,3 +273,17 @@ Keep lines ≤ 80 chars and leave exactly **one blank line** between secti
 - **Stage**: implementation
 - **Motivation / Decision**: Preserve the as-is prompts, helper behaviors, and logging contract so future refactors can validate parity without re-inspecting the notebook.
 - **Next step**: Monitor for follow-up questions while keeping documentation aligned with any newly observed legacy behaviors.
+
+## 2025-11-12  PR #draft
+
+- **Summary**: Plan to author a legacy simulator operations guide covering setup, execution, and artifact interpretation before refactoring.
+- **Stage**: planning
+- **Motivation / Decision**: Contributors need runnable instructions and context that reflect orchestrate_process() so documentation-first efforts capture the as-is experience.
+- **Next step**: Draft the guide, update cross-references, and sync TODO backlog once complete.
+
+## 2025-11-12  PR #draft
+
+- **Summary**: Documented the legacy simulator operations guide and linked it from overview docs to preserve the as-is runbook.
+- **Stage**: implementation
+- **Motivation / Decision**: Operators need reproducible steps and artifact context that match orchestrate_process() before modernization work begins.
+- **Next step**: Monitor for feedback while progressing the remaining documentation backlog items.

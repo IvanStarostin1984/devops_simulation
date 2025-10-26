@@ -1,0 +1,80 @@
+{
+  "prompt": "proceed with documenting simulation as is before refactoring",
+  "reformulation": "Create an as-is simulation reference guide so contributors can run the legacy notebook, understand inputs/outputs, and interpret generated artifacts before any refactor begins.",
+  "assumptions": [
+    "All updates remain documentation-only under legacy/documentation/** and repository guides.",
+    "Legacy code stays untouched; guidance must reflect current behavior even if quirks exist.",
+    "Documentation should cite authoritative code sections to prove accuracy."
+  ],
+  "constraints": [
+    "Follow AGENTS.md process: log plan/outcome in NOTES.md, sync TODO.md, obey markdown style.",
+    "Maintain \u2264100-character lines and clear headings for readability.",
+    "Keep .agent artifacts free of secrets and include entry in index.json."
+  ],
+  "stakeholders": [
+    "Maintainers preparing for future refactors",
+    "Contributors learning how to operate the legacy simulator",
+    "Reviewers ensuring documentation matches observed behavior"
+  ],
+  "non_functional_requirements": [
+    "Docs must be navigable with cross-links from overview materials.",
+    "Guidance should support reproducibility with explicit prerequisites and commands.",
+    "Records in NOTES/TODO/.agent must support auditability of decisions."
+  ],
+  "goals": [
+    "Author a step-by-step operations guide for the legacy simulator covering setup, execution, and cleanup.",
+    "Explain how to interpret the generated outputs and tie them back to automation behavior.",
+    "Update project trackers (NOTES, TODO) and overviews so the new guide is discoverable."
+  ],
+  "outcomes": [
+    "Operators can run the notebook confidently with documented prerequisites and fallback behaviors.",
+    "Readers understand which artifacts are produced, how to find them, and what each represents.",
+    "Backlog item for the simulation reference guide is marked complete with supporting notes."
+  ],
+  "acceptance_criteria": [
+    "New guide describes prerequisites, file uploads, configuration options, execution steps, and expected outputs with source citations.",
+    "Guide links to existing detailed docs (artifacts, configuration, flow) for deeper reference.",
+    "README/TODO/NOTES reference the guide so contributors can locate it easily.",
+    "Plan and completion entries appended to NOTES.md per template."
+  ],
+  "plan": {
+    "mode": "one-pass",
+    "scope": [
+      "Draft the simulation operations guide under legacy/documentation/legacy-simulator/.",
+      "Cross-link guide from simulation overview and README.",
+      "Update TODO backlog item and append NOTES entries for plan and outcome."
+    ],
+    "risks": [
+      "Missing nuanced steps from Colab workflow could mislead operators.",
+      "Overlapping info with existing docs might create contradictions if not cross-referenced.",
+      "Line-length or lint issues if formatting is inconsistent."
+    ],
+    "acceptance_tests": [
+      "Manual walkthrough verifying instructions align with orchestrate_process() implementation.",
+      "Markdownlint expectations satisfied (no obvious formatting violations).",
+      "Cross-links resolve correctly via relative paths."
+    ],
+    "deliverables": [
+      "New simulation operations guide document.",
+      "Updated README/simulation overview references.",
+      "Synced NOTES and TODO entries reflecting plan and completion."
+    ]
+  },
+  "actions_taken": [
+    "Logged plan in NOTES.md and linked TODO backlog entry to the new planning record.",
+    "Authored legacy/documentation/legacy-simulator/operations-guide.md describing prerequisites, inputs, execution, and outputs with code citations.",
+    "Cross-linked the operations guide from the simulation overview and README so contributors can find it.",
+    "Marked the simulation reference guide backlog item complete in TODO.md."
+  ],
+  "diffs": [
+    "Added legacy/documentation/legacy-simulator/operations-guide.md and referenced it from overview materials.",
+    "Updated README.md and TODO.md to surface the new guide and completion status.",
+    "Appended planning and implementation entries to NOTES.md."
+  ],
+  "test_results": [
+    "Not run (documentation-only change)."
+  ],
+  "metrics": [],
+  "blockers": [],
+  "next_steps": []
+}
