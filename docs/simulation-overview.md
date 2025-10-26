@@ -140,6 +140,8 @@ mind:
 
 - The root [`README.md`](../README.md) provides a project overview and links to
   this document.
+- `legacy/documentation/behavior-baseline.md` records the current simulator
+  behavior contract that refactors must preserve.
 - Future developer guides should reference this overview to ensure consistent
   terminology and shared understanding of workflows and metrics.
 

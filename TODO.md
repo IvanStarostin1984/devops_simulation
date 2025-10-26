@@ -6,6 +6,11 @@
   - Draft docs/simulation-overview.md covering modes, workflows, data IO, metrics.
   - Describe reporting limitations and planned remediation.
   - Cross-link overview from README and future developer guides section.
+- [x] Verify legacy behavior baseline doc accuracy ([Plan](NOTES.md#2025-10-31--pr-draft)).
+- [x] Fill any gaps found in legacy/documentation/behavior-baseline.md so it captures
+      actual control flow, IO contracts, and guardrails before refactoring (NOTES 2025-10-31 PR #draft).
+- [x] Captured legacy simulator behavior baseline (NOTES 2025-10-30 PR #draft)
+  and published `legacy/documentation/behavior-baseline.md`.
 - [x] Refresh README.md and docs/simulation-overview.md per NOTES.md entry dated
   2025-10-27 to remove typos, clarify guardrails, and highlight next steps.
 
@@ -21,7 +26,7 @@
    notes, contribution guidelines, changelog entries) resulting from the above
    work. ([Plan](NOTES.md#2025-10-26--pr-draft))
 
-## Legacy simulator behaviour documentation plan ([Plan](NOTES.md#2025-10-29--pr-draft))
+## Legacy simulator behavior documentation plan ([Plan](NOTES.md#2025-10-29--pr-draft))
 
 > All tracks below execute in parallel and target distinct documentation files
 > under `docs/legacy-simulator/` to avoid cross-file contention.
