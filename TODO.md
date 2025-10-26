@@ -85,16 +85,16 @@
     fire.
   - [x] Document orchestrator flow narrative (see
     [NOTES.md#2025-11-04--pr-draft](NOTES.md#2025-11-04--pr-draft)).
-- [ ] **Track: Artifact template structures**
-  - Review how `DevOpsSimulation` consumes `artifact_data.json` keys such as
-    `tables`, `dependencies_map`, `artifact_key_map`,
-    `artifact_trace_column_map`, and `artifact_review_questions` when preparing
-    artifacts and trace coverage.
-  - Document how helper functions like `add_json_as_docx_table` translate rows
-    into the student/teacher DOCX outputs and how dependency ordering affects
-    phase execution.
-  - Author `legacy/documentation/legacy-simulator/templates.md` describing the
-    schema fields, prompt text, and downstream consumers.
+- [x] **Track: Artifact template structures**
+  - Documented how the orchestrator consumes `tables`, `dependencies_map`,
+    `artifact_key_map`, `artifact_trace_column_map`, and
+    `artifact_review_questions` inside
+    `legacy/documentation/legacy-simulator/templates.md` with direct code
+    citations.
+  - Covered helper behavior (`add_columns_to_table`, `add_new_table`,
+    `modify_artifact_instructions`) so future process changes preserve the
+    observed automation contract.
+  - Completed per `NOTES.md#2025-11-11--pr-draft`.
 - [ ] **Track: Simulation configuration surfaces** ([Plan](NOTES.md#2025-11-08--pr-draft))
   - Audit `simulation_config.json` alongside `DevOpsSimulation.__init__` to
     explain controls for `macroIterations`, `phases`, `_phase_final_mini`, and
@@ -118,11 +118,10 @@
   - Added a lifecycle matrix summarising producers, append/overwrite modes, and seeded defaults in legacy/documentation/legacy-simulator/artifacts.md.
   - Clarified configuration fallbacks when `simulation_config.json` is absent and how the notebook reuses `builtins.CLIENT_SPEC`.
   - Documented logging guarantees and truncation behaviour for `colab_console_output.txt` to preserve observable transcripts.
-- [ ] **Track: Runtime logging and environment bootstrap**
-  - Document the `DualLogger` stdout hijack, notebook `print` mirroring, and the
-    Colab-specific bootstrap commands (`!pip install …`, `ensure_nltk_resources`
-    guards) at the top of `legacy/openai19pm10.py`.
-  - Record expectations for storing `colab_console_output - *.txt`, handling
-    dependency versions, and reproducing local installs.
-  - Produce `legacy/documentation/legacy-simulator/runtime-log.md` consolidating these
-    environment and logging considerations.
+- [x] **Track: Runtime logging and environment bootstrap**
+  - Captured the stdout mirroring, pip bootstrap, and `ensure_nltk_resources`
+    idempotence in
+    `legacy/documentation/legacy-simulator/runtime-log.md`.
+  - Described credential handling, upload/download flow, and log preservation so
+    future runs remain reproducible.
+  - Completed per `NOTES.md#2025-11-11--pr-draft`.

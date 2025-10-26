@@ -1,0 +1,79 @@
+{
+  "prompt": "proceed with documenting simulation as is before refactoring",
+  "reformulation": "Document the legacy DevOps simulation's current behavior by expanding the remaining reference tracks before any refactor work begins.",
+  "assumptions": [
+    "Legacy Python sources stay read-only; only documentation updates are expected.",
+    "Existing documentation structure under legacy/documentation/** remains authoritative and should be extended, not relocated."
+  ],
+  "constraints": [
+    "Follow repository process guardrails in AGENTS.md, including NOTES/TODO updates and documentation style.",
+    "Do not modify executable code under legacy/ except documentation directories.",
+    "Keep .agent workspace sanitized and committed without secrets."
+  ],
+  "stakeholders": [
+    "Repository maintainers planning the refactor",
+    "Contributors relying on accurate legacy behavior docs",
+    "Reviewers validating parity during future modernization"
+  ],
+  "non_functional_requirements": [
+    "Documentation must be precise, reproducible, and cite authoritative code locations.",
+    "Keep docs readable with \u2264100-character lines and structured headings per markdownlint expectations.",
+    "Ensure processes remain auditable via NOTES, TODO, and .agent records."
+  ],
+  "goals": [
+    "Author the missing legacy simulator references for template structures and runtime logging bootstrap.",
+    "Align backlog trackers (TODO.md, NOTES.md) with the newly documented scope.",
+    "Cross-link the new references from existing overview materials so readers can navigate the legacy documentation set."
+  ],
+  "outcomes": [
+    "Contributors can trace how artifact templates, dependencies, and review prompts drive runtime behavior without reading the notebook.",
+    "Operators understand the logging/bootstrap requirements to rerun the legacy notebook in Colab or locally.",
+    "Project trackers reflect that the documentation backlog items for templates and runtime logging are complete."
+  ],
+  "acceptance_criteria": [
+    "`legacy/documentation/legacy-simulator/templates.md` exists with schema explanations, helper usage, and dependencies referencing authoritative code sections.",
+    "`legacy/documentation/legacy-simulator/runtime-log.md` documents stdout capture, environment bootstrap commands, and dependency expectations with source citations.",
+    "`NOTES.md` records this plan and the implementation outcome, and `TODO.md` marks the related backlog items as completed with references to NOTES.",
+    "Existing overview docs mention the new references so the documentation set stays discoverable."
+  ],
+  "plan": {
+    "mode": "one-pass",
+    "scope": [
+      "Add detailed template and runtime logging documentation under legacy/documentation/legacy-simulator/.",
+      "Update README-style references if needed to point to the new documents.",
+      "Sync NOTES and TODO with planning and completion status."
+    ],
+    "risks": [
+      "Misstating artifact template fields due to misreading the notebook.",
+      "Omitting runtime bootstrap nuances such as ensure_nltk_resources side effects.",
+      "Link rot if references between docs are inconsistent."
+    ],
+    "acceptance_tests": [
+      "Manual review of new docs against cited code ensures descriptions match implementation.",
+      "Spell-check via markdownlint/pre-commit implicit expectations (docs should pass lint).",
+      "Verify README and overview references resolve to the new files."
+    ],
+    "deliverables": [
+      "Updated documentation files and cross-links.",
+      "NOTES and TODO entries capturing plan and closure.",
+      "Committed .agent log summarizing actions and outcomes."
+    ]
+  },
+  "actions_taken": [
+    "Created .agent workspace entry, defined outcomes, and recorded plan in NOTES.md per process guardrails.",
+    "Authored legacy/documentation/legacy-simulator/templates.md detailing artifact_data-driven behavior with code citations.",
+    "Authored legacy/documentation/legacy-simulator/runtime-log.md covering stdout capture and bootstrap requirements.",
+    "Updated simulation overview and TODO backlog to reference and close the new documentation tracks."
+  ],
+  "diffs": [
+    "Added template and runtime logging reference docs under legacy/documentation/legacy-simulator/.",
+    "Linked new material from the simulation overview and marked backlog items complete.",
+    "Appended planning and implementation entries to NOTES.md."
+  ],
+  "test_results": [
+    "Not run (documentation-only updates)."
+  ],
+  "metrics": [],
+  "blockers": [],
+  "next_steps": []
+}
