@@ -110,3 +110,25 @@ Keep lines ≤ 80 chars and leave exactly **one blank line** between secti
   acceptance criteria: overview reflects actual legacy behavior, cites key
   runtime files, and calls out preserved limitations.
 
+
+## 2025-11-02  PR #draft
+
+- **Summary**: Plan to enrich `docs/simulation-overview.md` so it captures
+  observable legacy simulator behavior, referencing control flow, state
+  hand-offs, and generated artifacts.
+- **Stage**: planning
+- **Motivation / Decision**: Documenting the as-is implementation with precise
+  code touchpoints enables refactors to validate parity and satisfies the
+  outstanding overview task.
+- **Next step**: Update `docs/simulation-overview.md` to describe
+  `run_backcompat_iterations`, `run_phase_based_simulation`, issue/lesson
+  propagation, and outputs; accept when the doc cites key functions, state
+  storage, and reporting limitations drawn from the current code.
+
+## 2025-11-03  PR #draft
+- **Outcome / Acceptance Criteria**: `docs/simulation-overview.md` cites the actual CSV, DOCX, and log filenames used by `setup_documentation()` and `generate_final_summary_doc()` so readers no longer expect timestamped variants.
+- **Summary**: Align simulation overview documentation with the concrete file names and rotation behavior in `legacy/openai19pm10.py`.
+- **Stage**: planning
+- **Motivation / Decision**: Review feedback highlighted mismatches between the documented artifact names and the code paths that emit them, risking confusion during verification runs.
+- **Next step**: Update `docs/simulation-overview.md` to match the code defaults (e.g., `iteration_metrics.csv`, `mini_iteration_summary_metrics.csv`, `iteration_summary_metrics.csv`, `output_multi_iter.docx`, `colab_console_output.txt`) and describe overwrite vs. append behavior.
+
