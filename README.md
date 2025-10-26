@@ -39,8 +39,8 @@ and configuration JSON files but differ in how quickly feedback loops close.
   quality.
 
 For a deeper walkthrough of inputs, iteration flow, and metrics, see the
-[simulation overview](docs/simulation-overview.md) and the baseline summary in
-`legacy/documentation/behavior-baseline.md`.
+[simulation overview](legacy/documentation/simulation-overview.md) and the
+baseline summary in `legacy/documentation/behavior-baseline.md`.
 
 ## Inputs, Outputs, and Metrics
 
@@ -54,8 +54,8 @@ For a deeper walkthrough of inputs, iteration flow, and metrics, see the
 
 ## Repository Structure & Guardrails
 
-- `docs/` — canonical documentation for workflows, metrics, and current
-  limitations.
+- `docs/` — reserved for forward-looking documentation that will accompany the
+  refactor (currently empty while we capture the legacy state).
 - `legacy/` — reference implementation targeted for refactoring. Treat it as
   read-only **except** for files under `legacy/documentation/**` and any
   `README.md` files within the directory tree.
@@ -67,9 +67,9 @@ For a deeper walkthrough of inputs, iteration flow, and metrics, see the
 ## Working With the Project
 
 1. Review `AGENTS.md`, `TODO.md`, `NOTES.md`, the
-   [`docs/simulation-overview.md`](docs/simulation-overview.md) document, and
-   `legacy/documentation/behavior-baseline.md` to align with current constraints
-   and vocabulary.
+   [`legacy/documentation/simulation-overview.md`](legacy/documentation/simulation-overview.md)
+   document, and `legacy/documentation/behavior-baseline.md` to align with
+   current constraints and vocabulary.
 2. Treat documentation updates like code changes: log intent in `NOTES.md`, add
    actionable items to `TODO.md`, and keep diffs focused and well explained.
 3. Avoid modifying the `legacy/` sources until the refactoring plan unlocks

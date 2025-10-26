@@ -4,7 +4,7 @@
 
 - [x] Document simulation overview (see NOTES.md entries dated 2025-02-14,
       2025-11-01, and 2025-11-02).
-  - Draft `docs/simulation-overview.md` covering modes, workflows, data IO,
+  - Draft `legacy/documentation/simulation-overview.md` covering modes, workflows, data IO,
     metrics, and explicit references to the legacy runtime files they stem
     from.
   - Describe reporting limitations and planned remediation.
@@ -21,8 +21,9 @@
       actual control flow, IO contracts, and guardrails before refactoring (NOTES 2025-10-31 PR #draft).
 - [x] Captured legacy simulator behavior baseline (NOTES 2025-10-30 PR #draft)
   and published `legacy/documentation/behavior-baseline.md`.
-- [x] Refresh README.md and docs/simulation-overview.md per NOTES.md entry dated
-  2025-10-27 to remove typos, clarify guardrails, and highlight next steps.
+- [x] Refresh README.md and legacy/documentation/simulation-overview.md per
+  NOTES.md entry dated 2025-10-27 to remove typos, clarify guardrails, and
+  highlight next steps.
 - [x] Realign simulation overview artifact references ([Plan](NOTES.md#2025-11-03--pr-draft)).
   - Confirm the document lists `iteration_metrics.csv`,
     `mini_iteration_summary_metrics.csv`,
@@ -32,6 +33,26 @@
     existing files are present.
   - Acceptance criteria: documentation references match the filenames and
     behaviors in `setup_documentation()` and `generate_final_summary_doc()`.
+
+- [x] Relocate legacy simulator documentation into `legacy/documentation/**`
+      ([Plan](NOTES.md#2025-11-09--pr-draft)).
+  - Ensure `legacy/documentation/simulation-overview.md` and
+    `legacy/documentation/legacy-simulator/**` contain the relocated docs and
+    remove redundant copies from `docs/`.
+  - Update README.md, TODO.md, NOTES.md, and intra-document links so they target
+    the new locations.
+  - Acceptance criteria: No files under `docs/` describe the legacy simulator,
+    and all repository references resolve to the relocated documents.
+- [x] Realigned backlog links to the legacy documentation tree
+      ([Plan](NOTES.md#2025-11-10--pr-draft)).
+  - Replaced remaining `docs/legacy-simulator/**` references with
+    `legacy/documentation/legacy-simulator/**` so contributors follow the
+    relocated structure.
+  - Confirmed README.md still accurately describes the repository layout and
+    does not point to the removed `docs/` directory for legacy guidance.
+  - Acceptance criteria: TODO.md active items now reference
+    `legacy/documentation/**` exclusively, and spot-checking README.md found no
+    stale `docs/` links to legacy material.
 
 # Documentation backlog — aligned with NOTES.md plan
 
@@ -48,7 +69,7 @@
 ## Legacy simulator behavior documentation plan ([Plan](NOTES.md#2025-10-29--pr-draft))
 
 > All tracks below execute in parallel and target distinct documentation files
-> under `docs/legacy-simulator/` to avoid cross-file contention.
+> under `legacy/documentation/legacy-simulator/` to avoid cross-file contention.
 
 - [x] **Track: Orchestrator flow and helper contracts** ([Outcome](NOTES.md#2025-11-05--pr-draft))
   - Inspect `DevOpsSimulation.__init__`, `run_simulation`,
@@ -59,8 +80,9 @@
     `LLMClient`) and utilities (`DualLogger`, `_write_client_spec_once`,
     `apply_global_unresolved_issues`) feed metrics, headings, and carry-over
     state into each pass.
-  - Draft `docs/legacy-simulator/flow.md` synthesising the lifecycle narrative
-    and citing where CSV writers and DOCX generation hooks fire.
+  - Draft `legacy/documentation/legacy-simulator/flow.md` synthesising the
+    lifecycle narrative and citing where CSV writers and DOCX generation hooks
+    fire.
   - [x] Document orchestrator flow narrative (see
     [NOTES.md#2025-11-04--pr-draft](NOTES.md#2025-11-04--pr-draft)).
 - [ ] **Track: Artifact template structures**
@@ -71,18 +93,19 @@
   - Document how helper functions like `add_json_as_docx_table` translate rows
     into the student/teacher DOCX outputs and how dependency ordering affects
     phase execution.
-  - Author `docs/legacy-simulator/templates.md` describing the schema fields,
-    prompt text, and downstream consumers.
+  - Author `legacy/documentation/legacy-simulator/templates.md` describing the
+    schema fields, prompt text, and downstream consumers.
 - [ ] **Track: Simulation configuration surfaces** ([Plan](NOTES.md#2025-11-08--pr-draft))
   - Audit `simulation_config.json` alongside `DevOpsSimulation.__init__` to
     explain controls for `macroIterations`, `phases`, `_phase_final_mini`, and
     toggles like `backwardCompatibilityMode`.
   - Note fallbacks used when keys are missing (e.g., default phases list,
     macro/mini counts) and how they steer orchestrator branching.
-  - Create `docs/legacy-simulator/configuration.md` summarising every knob and
-    linking them to the decision logic they influence.
+  - Create `legacy/documentation/legacy-simulator/configuration.md` summarising
+    every knob and linking them to the decision logic they influence.
 - [x] **Track: Runtime inputs and generated outputs** ([Plan](NOTES.md#2025-11-06--pr-draft))
-  - Documented current inputs, append/overwrite behavior, and download list in docs/legacy-simulator/artifacts.md.
+  - Documented current inputs, append/overwrite behavior, and download list in
+    `legacy/documentation/legacy-simulator/artifacts.md`.
   - Captured how `setup_documentation` and downstream writers emit
     `iteration_metrics.csv`, `mini_iteration_summary_metrics.csv`,
     `iteration_summary_metrics.csv`, and the DOCX reports without introducing
@@ -92,7 +115,7 @@
   - Summarised analysis hints for every artifact so refactors preserve the
     current bundle.
 - [x] **Track: Artifact lifecycle polish** ([Plan](NOTES.md#2025-11-07--pr-draft))
-  - Added a lifecycle matrix summarising producers, append/overwrite modes, and seeded defaults in docs/legacy-simulator/artifacts.md.
+  - Added a lifecycle matrix summarising producers, append/overwrite modes, and seeded defaults in legacy/documentation/legacy-simulator/artifacts.md.
   - Clarified configuration fallbacks when `simulation_config.json` is absent and how the notebook reuses `builtins.CLIENT_SPEC`.
   - Documented logging guarantees and truncation behaviour for `colab_console_output.txt` to preserve observable transcripts.
 - [ ] **Track: Runtime logging and environment bootstrap**
@@ -101,5 +124,5 @@
     guards) at the top of `legacy/openai19pm10.py`.
   - Record expectations for storing `colab_console_output - *.txt`, handling
     dependency versions, and reproducing local installs.
-  - Produce `docs/legacy-simulator/runtime-log.md` consolidating these
+  - Produce `legacy/documentation/legacy-simulator/runtime-log.md` consolidating these
     environment and logging considerations.

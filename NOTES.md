@@ -200,3 +200,62 @@ Keep lines ≤ 80 chars and leave exactly **one blank line** between secti
   and draft `docs/legacy-simulator/configuration.md` to satisfy the acceptance
   criteria.
 
+## 2025-11-09  PR #draft
+
+- **Outcome / Acceptance Criteria**: All documentation describing the legacy
+  simulator lives under `legacy/documentation/**`, repository references point to
+  the relocated paths, and no links target `docs/simulation-overview.md` or
+  `docs/legacy-simulator/**`.
+- **Summary**: Plan to relocate legacy simulator documentation into the
+  `legacy/documentation/` tree and retarget internal links while keeping
+  non-legacy docs untouched.
+- **Stage**: planning
+- **Motivation / Decision**: Co-locating as-is documentation with the legacy
+  assets reduces confusion during the documentation-first phase before
+  refactoring.
+- **Next step**: Move the files, update references, and adjust TODO.md
+  checkpoints accordingly.
+
+## 2025-11-09  PR #draft
+
+- **Summary**: Moved the legacy simulator overview and reference docs into
+  `legacy/documentation/`, updated README/TODO links, and confirmed no
+  actionable references under `docs/` still point to legacy content.
+- **Stage**: implementation
+- **Motivation / Decision**: Keeping the as-is documentation beside the legacy
+  assets avoids confusion while the refactor is pending and aligns with the
+  request to house all legacy material in one place.
+- **Next step**: Monitor for stale historical references in NOTES.md that still
+  cite the previous `docs/` paths; leave them as archival context per log
+  policies.
+
+
+## 2025-11-10  PR #draft
+
+- **Outcome / Acceptance Criteria**: All active plans and backlog entries
+  reference the relocated `legacy/documentation/**` paths, callers know legacy
+  docs stay co-located with the code, and cross-references in root guides
+  resolve without pointing at the removed `docs/` tree.
+- **Summary**: Plan documentation cleanup to realign TODO backlog links and
+  repository guidance with the new legacy documentation locations.
+- **Stage**: planning
+- **Motivation / Decision**: Review feedback highlighted stale `docs/`
+  references that could misdirect contributors now that the overview and
+  simulator docs moved under `legacy/documentation/`.
+- **Next step**: Update TODO.md (and any other affected guidance) to reference
+  the legacy paths, verify README wording remains accurate, and prepare to mark
+  the task complete once the links resolve correctly.
+
+
+## 2025-11-10  PR #draft
+
+- **Summary**: Updated TODO backlog language to reference the legacy
+  documentation tree and verified README links stay accurate after the
+  relocation.
+- **Stage**: implementation
+- **Motivation / Decision**: Keep contributor guidance aligned with the
+  relocated legacy docs so new work doesn't drift back to the removed `docs/`
+  paths.
+- **Next step**: None; backlog items now point at `legacy/documentation/**` and
+  README guidance remains correct.
+

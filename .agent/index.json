@@ -1,0 +1,14 @@
+{
+  "tasks": [
+    {
+      "id": "2025-11-09-doc-relocation",
+      "title": "Relocate legacy simulator documentation under legacy/documentation",
+      "path": "tasks/2025-11-09-doc-relocation.md"
+    },
+    {
+      "id": "2025-11-10-doc-link-realignment",
+      "title": "Align backlog references with legacy documentation paths",
+      "path": "tasks/2025-11-10-doc-link-realignment.md"
+    }
+  ]
+}
