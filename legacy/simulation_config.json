@@ -1,0 +1,16 @@
+{
+  "macroIterations": 2,
+  "phases": [
+    {
+      "phaseName": "Initiating",
+      "miniIterations": 2,
+      "tableList": ["1.1.0", "1.1.1"]
+    },
+    {
+      "phaseName": "FeasibilityStudy",
+      "miniIterations": 2,
+      "tableList": ["1.1.1.1", "1.1.2"]
+    }
+  ],
+  "backwardCompatibilityMode": false
+}

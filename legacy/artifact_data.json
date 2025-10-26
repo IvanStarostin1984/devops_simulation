@@ -1,0 +1,150 @@
+{
+    "tables": [
+        {
+            "row_number": 1,
+            "Artifact_index": "1.1.0",
+            "Artifact_name": "Input",
+            "Artifact_type": "table",
+            "Artifact_columns": "Input Item, Details, Related Reqs",
+            "Obligatory_rows": "Client specifications, Initial user scenarios, Domain details, Success metrics",
+            "custom_instructions": "List initial high-level inputs for a software project in each row",
+            "Sample Data Rows": [
+                {
+                    "Input Item": "Basic Goal",
+                    "Details": "Summarize the primary objective",
+                    "Related Reqs": "N/A"
+                },
+                {
+                    "Input Item": "Constraints",
+                    "Details": "Highlight known limitations",
+                    "Related Reqs": "N/A"
+                }
+            ]
+        },
+        {
+            "row_number": 2,
+            "Artifact_index": "1.1.1",
+            "Artifact_name": "Main Scenario Table with N modules",
+            "Artifact_type": "table",
+            "Artifact_columns": "Module ID, Module, Action 1, Action 2,..., Action n, Related Reqs",
+            "Obligatory_rows": "",
+            "custom_instructions": "Break down major modules or scenarios, listing each with relevant actions in each row. Create as many actions per module as needed to be in line with client specifications.",
+            "Sample Data Rows": [
+                {
+                    "Module ID": "M-1",
+                    "Module": "User",
+                    "Action 1": "Register",
+                    "Action 2": "Login",
+                    "Action 3": "Verify email",
+                    "Action 4": "Verify academic credentials",
+                    "Action 5": "Update profile",
+                    "Related Reqs": "Req-01"
+                },
+                {
+                    "Module ID": "M-2",
+                    "Module": "Event",
+                    "Action 1": "Create event",
+                    "Action 2": "Edit event",
+                    "Action 3": "Delete event",
+                    "Action 4": "submit event",
+                    "Action 5": "View event details",
+                    "Related Reqs": "Req-01"
+                }
+            ]
+        },
+        {
+            "row_number": 3,
+            "Artifact_index": "1.1.1.1",
+            "Artifact_name": "Modules Components Description Table",
+            "Artifact_type": "table",
+            "Artifact_columns": "Requirement ID, Module, Component, Description, Interface, Potential Metrics, V&V focus",
+            "Obligatory_rows": "",
+            "custom_instructions": "Use modules and actions from table 1.1.1 Main Scenario Table with N modules. Actions from that table become Components here. Make sure all Actions are included as components. Assign Requirement ID to each Component",
+            "Sample Data Rows": [
+                {
+                    "Requirement ID": "FR-01",
+                    "Module": "User",
+                    "Component": "Register",
+                    "Description": "User signs up with details like name, email, and password.",
+                    "Interface": "I-1: Registration form (email/password)",
+                    "Potential Metrics": "Actionable: Registration success rate (% completion); Time to register. Vanity: Total registrations",
+                    "V&V focus": "TBD"
+                },
+                {
+                    "Requirement ID": "FR-02",
+                    "Module": "User",
+                    "Component": "Login",
+                    "Description": "User logs in with credentials.",
+                    "Interface": "I-3: Login form",
+                    "Potential Metrics": "Actionable: Login success rate (% successful); Avg. login time Vanity: Total login attempts",
+                    "V&V focus": "TBD"
+                }
+            ]
+        },
+        {
+            "row_number": 4,
+            "Artifact_index": "1.1.2",
+            "Artifact_name": "Domain Context Table",
+            "Artifact_type": "table",
+            "Artifact_columns": "Category, Details, Quality Attributes, Potential Metrics, DevSecOps / Security, Related Reqs",
+            "Obligatory_rows": "",
+            "custom_instructions": "List key domain categories, capturing high-level attributes and metrics relevant to security or DevSecOps.",
+            "Sample Data Rows": [
+                {
+                    "Category": "Financial Data",
+                    "Details": "Includes transactions",
+                    "Quality Attributes": "Reliability",
+                    "Potential Metrics": "Error rate",
+                    "DevSecOps / Security": "Data encryption",
+                    "Related Reqs": "Req-05"
+                },
+                {
+                    "Category": "User Profiles",
+                    "Details": "Handles personal info",
+                    "Quality Attributes": "Privacy",
+                    "Potential Metrics": "Time to anonymize",
+                    "DevSecOps / Security": "GDPR compliance",
+                    "Related Reqs": "Req-09"
+                }
+            ]
+        }
+    ],
+
+    "dependencies_map": {
+        "1.1.0": [],
+        "1.1.1": [ "1.1.0" ],
+        "1.1.1.1": [ "1.1.0", "1.1.1" ],
+        "1.1.2": [ "1.1.0", "1.1.1.1" ]      
+        
+    },
+
+    "artifact_key_map": {
+        "1.1.0": "Input Item",
+        "1.1.1": "Module ID",
+        "1.1.1.1": "Requirement ID",
+        "1.1.2": "Category"
+               
+    },
+
+    "artifact_trace_column_map": {
+        "1.1.0": "Related Reqs",
+        "1.1.1": "Related Reqs",
+        "1.1.1.1": "Requirement ID",
+        "1.1.2": "Related Reqs"     
+    },
+
+    "artifact_review_questions": {
+        "1.1.0": [
+            "1) Verify that the artefact is internally consistent, unambiguous, and complete for this development stage. 2) Check that every row traces to the client specification and dependencies. 3) Confirm that any missing content is correctly deferred according to ABSOLUTE RULE 1."
+        ],
+        "1.1.1": [
+            "1) Verify that the artefact is internally consistent, unambiguous, and complete for this development stage. 2) Check that every row traces to the client specification and dependencies. 3) Confirm that any missing content is correctly deferred according to ABSOLUTE RULE 1."
+        ],
+        "1.1.1.1": [
+            "1) Verify that the artefact is internally consistent, unambiguous, and complete for this development stage. 2) Check that every row traces to the client specification and dependencies. 3) Confirm that any missing content is correctly deferred according to ABSOLUTE RULE 1."
+        ],
+        "1.1.2": [
+            "1) Verify that the artefact is internally consistent, unambiguous, and complete for this development stage. 2) Check that every row traces to the client specification and dependencies. 3) Confirm that any missing content is correctly deferred according to ABSOLUTE RULE 1."
+        ]
+    }
+}

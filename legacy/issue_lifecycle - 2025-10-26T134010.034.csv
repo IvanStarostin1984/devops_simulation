@@ -1,0 +1,9 @@
+gapID,initialGapType,finalGapType,initialSeverity,finalSeverity,firstSeen,lastSeen,resolvedIn,firstSeenGlobalMini,lastSeenGlobalMini,resolvedInGlobalMini,status,RecurrenceCount,IssueLifespan,PhasesToResolution,ResolvedWithinSamePhase
+d6e0ba,MissedRequirement,MissedRequirement,Low,Low,"(1, 'Initiating', 1)","(1, 'FeasibilityStudy', 1)","(2, 'Initiating', 2)",1,3,6,Resolved,1,6,0,1
+0a5003,SecurityGap,SecurityGap,High,High,"(1, 'Initiating', 2)","(2, 'Initiating', 1)","(2, 'FeasibilityStudy', 2)",2,5,8,Resolved,1,7,1,0
+9d77eb,SecurityGap,SecurityGap,Medium,Medium,"(1, 'Initiating', 2)","(2, 'Initiating', 2)","(2, 'FeasibilityStudy', 2)",2,6,8,Resolved,1,7,1,0
+2ac8a1,SecurityGap,SecurityGap,Medium,Medium,"(1, 'Initiating', 2)","(2, 'FeasibilityStudy', 2)","(2, 'FeasibilityStudy', 2)",2,8,8,Resolved,1,7,1,0
+7f6e8d,SecurityGap,SecurityGap,Medium,Medium,"(1, 'FeasibilityStudy', 2)","(2, 'Initiating', 2)","(2, 'FeasibilityStudy', 2)",4,6,8,Resolved,1,5,0,1
+2f71be,MissedRequirement,MissedRequirement,Medium,Medium,"(1, 'FeasibilityStudy', 2)","(2, 'FeasibilityStudy', 1)","(2, 'FeasibilityStudy', 2)",4,7,8,Resolved,1,5,0,1
+5fe616,MissedRequirement,MissedRequirement,Medium,Medium,"(2, 'Initiating', 2)","(2, 'FeasibilityStudy', 2)","(2, 'FeasibilityStudy', 2)",6,8,8,Resolved,1,3,1,0
+d0923d,MissedRequirement,MissedRequirement,Medium,Medium,"(2, 'Initiating', 2)","(2, 'FeasibilityStudy', 2)","(2, 'FeasibilityStudy', 2)",6,8,8,Resolved,1,3,1,0
