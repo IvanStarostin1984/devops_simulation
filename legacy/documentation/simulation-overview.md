@@ -250,6 +250,12 @@ Use this quick-reference list when running the legacy notebook (Colab or local):
   this document.
 - [`behavior-baseline.md`](behavior-baseline.md) records the current simulator
   behavior contract that refactors must preserve.
+- [`legacy-simulator/templates.md`](legacy-simulator/templates.md) explains the
+  schema, dependencies, and review prompts loaded from
+  `legacy/artifact_data.json` each run.
+- [`legacy-simulator/runtime-log.md`](legacy-simulator/runtime-log.md)
+  summarizes the notebook bootstrap, logging guarantees, and file handoffs that
+  keep the legacy environment reproducible.
 - Future developer guides should reference this overview to ensure consistent
   terminology and shared understanding of workflows and metrics.
 

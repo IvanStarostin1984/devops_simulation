@@ -259,3 +259,17 @@ Keep lines ≤ 80 chars and leave exactly **one blank line** between secti
 - **Next step**: None; backlog items now point at `legacy/documentation/**` and
   README guidance remains correct.
 
+
+## 2025-11-11  PR #draft
+
+- **Summary**: Plan documentation updates for template schemas and runtime logging so the legacy simulator is fully captured before refactoring.
+- **Stage**: planning
+- **Motivation / Decision**: Remaining documentation tracks still lacked coverage of artifact_data-driven templates and the notebook bootstrap/logging contract needed for reproducible runs.
+- **Next step**: Author `legacy/documentation/legacy-simulator/templates.md` and `legacy/documentation/legacy-simulator/runtime-log.md`, then sync TODO backlog status.
+
+## 2025-11-11  PR #draft
+
+- **Summary**: Documented artifact template usage and runtime logging bootstrap to complete the remaining legacy simulator reference tracks.
+- **Stage**: implementation
+- **Motivation / Decision**: Preserve the as-is prompts, helper behaviors, and logging contract so future refactors can validate parity without re-inspecting the notebook.
+- **Next step**: Monitor for follow-up questions while keeping documentation aligned with any newly observed legacy behaviors.

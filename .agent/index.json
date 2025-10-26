@@ -9,6 +9,11 @@
       "id": "2025-11-10-doc-link-realignment",
       "title": "Align backlog references with legacy documentation paths",
       "path": "tasks/2025-11-10-doc-link-realignment.md"
+    },
+    {
+      "id": "2025-11-11-document-simulation",
+      "title": "Document legacy simulation as-is before refactor",
+      "path": ".agent/2025-11-11-document-simulation.json"
     }
   ]
 }
