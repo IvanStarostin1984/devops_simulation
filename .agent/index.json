@@ -14,6 +14,11 @@
       "id": "2025-11-11-document-simulation",
       "title": "Document legacy simulation as-is before refactor",
       "path": ".agent/2025-11-11-document-simulation.json"
+    },
+    {
+      "id": "2025-11-12-sim-reference-guide",
+      "title": "Author legacy simulator operations guide",
+      "path": ".agent/2025-11-12-sim-reference.json"
     }
   ]
 }

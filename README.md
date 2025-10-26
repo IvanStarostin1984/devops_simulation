@@ -68,8 +68,10 @@ baseline summary in `legacy/documentation/behavior-baseline.md`.
 
 1. Review `AGENTS.md`, `TODO.md`, `NOTES.md`, the
    [`legacy/documentation/simulation-overview.md`](legacy/documentation/simulation-overview.md)
-   document, and `legacy/documentation/behavior-baseline.md` to align with
-   current constraints and vocabulary.
+   document, the
+   [`legacy/documentation/legacy-simulator/operations-guide.md`](legacy/documentation/legacy-simulator/operations-guide.md),
+   and `legacy/documentation/behavior-baseline.md` to align with current
+   constraints and vocabulary.
 2. Treat documentation updates like code changes: log intent in `NOTES.md`, add
    actionable items to `TODO.md`, and keep diffs focused and well explained.
 3. Avoid modifying the `legacy/` sources until the refactoring plan unlocks

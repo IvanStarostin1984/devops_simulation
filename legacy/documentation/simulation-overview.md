@@ -4,10 +4,12 @@ This document summarizes how the simulation models standard and enhanced DevOps
 processes, how work iterates through macroiterations and miniiterations, the
 key data artifacts exchanged, and the metrics we expect to evaluate. Treat it
 as the single source of truth for terminology and flow until the refactoring
-effort introduces new adapters or interfaces. The observations below mirror the
-current implementation in `legacy/openai19pm10.py`, specifically the
-`DevOpsSimulation` class and its orchestrator helpers, so any future refactor
-must preserve the described behavior (or explicitly document deviations).
+effort introduces new adapters or interfaces. Pair it with the
+[legacy simulator operations guide](legacy-simulator/operations-guide.md) for
+setup and execution steps. The observations below mirror the current
+implementation in `legacy/openai19pm10.py`, specifically the `DevOpsSimulation`
+class and its orchestrator helpers, so any future refactor must preserve the
+described behavior (or explicitly document deviations).
 
 ## Implementation reference points
 

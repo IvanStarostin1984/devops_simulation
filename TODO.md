@@ -59,7 +59,8 @@
 1. **README overhaul** — restructure the introduction, add a quickstart and
    clarify repo purpose vs. simulation assets. ([Plan](NOTES.md#2025-10-26--pr-draft))
 2. **Simulation reference guide** — document how to locate, run, and interpret
-   simulation outputs, including sample workflows. ([Plan](NOTES.md#2025-10-26--pr-draft))
+   simulation outputs, including sample workflows.
+   (Completed per [NOTES.md#2025-11-12--pr-draft](NOTES.md#2025-11-12--pr-draft))
 3. **Legacy inventory audit** — catalogue `legacy/` artifacts, record retention
    rationale, and flag candidates for archival or cleanup. ([Plan](NOTES.md#2025-10-26--pr-draft))
 4. **Follow-up documentation tasks** — track subsequent updates (architecture
@@ -125,3 +126,6 @@
   - Described credential handling, upload/download flow, and log preservation so
     future runs remain reproducible.
   - Completed per `NOTES.md#2025-11-11--pr-draft`.
+- [x] Authored legacy simulator operations guide detailing prerequisites,
+  execution flow, and artifact interpretation.
+  ([Plan](NOTES.md#2025-11-12--pr-draft))
