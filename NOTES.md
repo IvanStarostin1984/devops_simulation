@@ -31,3 +31,17 @@ Keep lines ≤ 80 chars and leave exactly **one blank line** between secti
 - **Stage**: implementation
 - **Motivation / Decision**: Contributors need a canonical list of immutable legacy assets and clear handling rules.
 - **Next step**: None; legacy documentation now centralizes asset guidance.
+- **Summary**: Document simulation modes and link overview doc from README.
+- **Stage**: planning
+- **Motivation / Decision**: Need clear documentation of workflows, inputs/outputs, metrics, and known reporting gaps.
+- **Next step**: Draft overview doc and update README cross-reference.
+
+## 2025-10-26  PR #draft
+
+- **Summary**: Replace TODO placeholder with structured documentation backlog
+  tied to README overhaul, simulation references, and legacy inventory work.
+- **Stage**: planning
+- **Motivation / Decision**: Clarify near-term documentation deliverables and
+  ensure TODO items trace back to NOTES plans per repository conventions.
+- **Next step**: Execute backlog items in TODO.md, starting with README
+  overhaul when capacity allows.
