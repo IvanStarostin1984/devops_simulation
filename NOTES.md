@@ -63,7 +63,7 @@ Keep lines ≤ 80 chars and leave exactly **one blank line** between secti
 - **Stage**: planning
 - **Motivation / Decision**: A structured understanding of
   `legacy/openai19pm10.py` and its supporting assets is required to document
-  current behaviour accurately and derisk later modernization.
+  current behavior accurately and derisk later modernization.
 - **Next step**: Execute the parallel TODO.md tasks that capture flow,
   configuration, input, and output documentation tracks.
 
@@ -74,7 +74,26 @@ Keep lines ≤ 80 chars and leave exactly **one blank line** between secti
 - **Stage**: planning
 - **Motivation / Decision**: Reviewing `DevOpsSimulation`, `IssueTracker`, and
   related assets exposed specific control points that future docs must cover to
-  keep refactors aligned with the legacy behaviour.
+  keep refactors aligned with the legacy behavior.
 - **Next step**: Update TODO.md with parallel documentation tracks keyed to the
   identified files (`flow.md`, `templates.md`, `configuration.md`,
   `artifacts.md`, `runtime-log.md`).
+
+## 2025-10-30  PR #draft
+
+- **Summary**: Plan documentation capturing the legacy simulator's observable
+  behavior baseline before any refactor.
+- **Stage**: planning
+- **Motivation / Decision**: Need a shared reference describing current
+  macro/mini iteration flow, IO contracts, and operational guardrails so
+  refactors can verify behavior.
+- **Next step**: Author a legacy behavior baseline doc and cross-link it from
+  existing guides.
+
+
+### 2025-10-31  PR #draft
+- **Summary**: Outcomes/acceptance criteria established to verify `legacy/documentation/behavior-baseline.md` reflects actual simulator control flow, IO contracts, and guardrails before the refactor.
+- **Stage**: planning
+- **Motivation / Decision**: Need to audit the freshly added baseline doc for factual accuracy and fill observable gaps so future refactors rely on a trustworthy reference.
+- **Next step**: Update TODO.md with the verification task, review the code paths, and adjust the baseline documentation accordingly.
+
