@@ -164,3 +164,21 @@ Keep lines ≤ 80 chars and leave exactly **one blank line** between secti
 - **Next step**: Adjust TODO.md to mark the flow track complete and make any
   documentation touch-ups discovered during the verification review.
 
+
+## 2025-11-06  PR #draft
+
+- **Summary**: Plan documentation of the legacy simulator's runtime inputs and generated artifacts before any refactor.
+- **Stage**: planning
+- **Motivation / Decision**: Consolidate the observed file requirements, append/overwrite behavior, and download expectations into docs/legacy-simulator/artifacts.md so future work preserves the as-is contract.
+- **Next step**: Author docs/legacy-simulator/artifacts.md with outcomes and acceptance criteria, and sync TODO.md to track completion.
+
+## 2025-11-07  PR #draft
+
+- **Summary**: Plan a documentation polish pass to capture artifact lifecycle modes, configuration fallbacks, and logging guarantees the initial draft omitted.
+- **Stage**: planning
+- **Motivation / Decision**: Review feedback flagged missing clarity around append vs. overwrite behavior, seeded assets, and how optional configuration defaults behave when uploads are absent; tightening the reference avoids regressions during refactoring.
+- **Next step**: Update TODO.md with the targeted documentation fix and revise docs/legacy-simulator/artifacts.md to add an explicit lifecycle matrix, configuration fallback notes, and clearer logging guarantees.
+- **Summary**: Documented the lifecycle matrix, configuration fallbacks, and logging guarantees in docs/legacy-simulator/artifacts.md to close the review loop.
+- **Stage**: implementation
+- **Motivation / Decision**: Ensuring the artifact reference spells out overwrite vs. append behavior and seeded defaults prevents accidental contract changes during refactoring.
+- **Next step**: Monitor for additional review feedback while advancing the remaining legacy simulator documentation tracks in parallel.
