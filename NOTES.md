@@ -25,3 +25,11 @@ Keep lines ≤ 80 chars and leave exactly **one blank line** between secti
 - **Motivation / Decision**: establish collaboration conventions before code.
 - **Next step**: set up lint/test commands and begin core feature A.
 
+
+### 2025-02-14  PR #draft
+
+- **Summary**: Document simulation modes and link overview doc from README.
+- **Stage**: planning
+- **Motivation / Decision**: Need clear documentation of workflows, inputs/outputs, metrics, and known reporting gaps.
+- **Next step**: Draft overview doc and update README cross-reference.
+
